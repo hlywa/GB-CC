@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class KeyboardTrigger : MonoBehaviour
 {
-    void OnEnterTrigger(Collider other)
+    public Flowchart flowchart;
+
+    public FirstPersonController fpsController;
+    
+    void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entered");
+        fpsController.enabled = false;
+
+        flowchart.ExecuteBlock("Start");
     }
 }
