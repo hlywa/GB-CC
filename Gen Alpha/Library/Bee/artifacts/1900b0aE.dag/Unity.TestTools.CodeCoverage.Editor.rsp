@@ -119,13 +119,17 @@
 -define:STARTER_ASSETS_PACKAGES_CHECKED
 -define:MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED
 -define:CROSS_PLATFORM_INPUT
+-define:GAIA_2_PRESENT
+-define:GAIA_MESH_PRESENT
+-define:UPPipeline
 -define:CONDITIONAL_IGNORE_SUPPORTED
+-define:BURST_INSTALLED
 -define:TEST_FRAMEWORK_1_1_18_OR_NEWER
 -define:NO_COV_EDITORPREF
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
--r:"C:/Users/Emma/Documents/GitHub/GB-CC/Gen Alpha/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
--r:"C:/Users/Emma/Documents/GitHub/GB-CC/Gen Alpha/Library/PackageCache/com.unity.testtools.codecoverage@1.0.1/lib/ReportGenerator/ReportGeneratorMerged.dll"
+-r:"D:/GB-CC/Gen Alpha/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
+-r:"D:/GB-CC/Gen Alpha/Library/PackageCache/com.unity.testtools.codecoverage@1.0.1/lib/ReportGenerator/ReportGeneratorMerged.dll"
 -r:"D:/Program Files/2021.3.8f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 -r:"D:/Program Files/2021.3.8f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"D:/Program Files/2021.3.8f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
