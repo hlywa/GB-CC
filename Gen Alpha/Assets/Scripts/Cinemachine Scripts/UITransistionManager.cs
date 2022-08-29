@@ -7,13 +7,7 @@ using UnityEngine;
 public class UITransistionManager : MonoBehaviour
 {
     public CinemachineVirtualCamera currentCamera; 
- 
-    public void Start()
-    {
-        currentCamera.Priority++;
-    }
 
-    
     public void UpdateCamera(CinemachineVirtualCamera target)
     {
         currentCamera.Priority--;
