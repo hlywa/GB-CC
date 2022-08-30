@@ -6,14 +6,19 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class KeyboardTrigger : MonoBehaviour
 {
-    public Flowchart flowchart;
+    [SerializeField] Flowchart flowchart;
 
-    public FirstPersonController fpsController;
+    [SerializeField] FirstPersonController fpsController;
+
+    [SerializeField] private string m_blockName;
     
     void OnTriggerEnter(Collider other)
     {
-        fpsController.enabled = false;
-
-        flowchart.ExecuteBlock("Start");
+        if (m_blockName != "")
+        {
+            fpsController.enabled = false;
+            flowchart.ExecuteBlock(m_blockName);
+        }
+        
     }
 }
