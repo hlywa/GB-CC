@@ -9,6 +9,7 @@ public class Tile : MonoBehaviour
     public Color creatableColor;
 
     public LayerMask obstacles;
+    public LayerMask goal;
 
     public bool isWalkable;
     public bool isCreatable;
@@ -26,6 +27,18 @@ public class Tile : MonoBehaviour
         gm = FindObjectOfType<GM>();
         rend = GetComponent<SpriteRenderer>();
 
+    }
+
+    public bool IsGoal()
+    {
+        Collider2D col = Physics2D.OverlapCircle(transform.position, 0.2f, goal);
+        if (col == null)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public bool isClear() // does this tile have an obstacle on it. Yes or No?
