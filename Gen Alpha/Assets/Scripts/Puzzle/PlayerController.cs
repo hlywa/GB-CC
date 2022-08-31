@@ -38,9 +38,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow) && m_leftTile)
         {
             Move(m_leftTile.transform);
-            if (m_leftTile.IsGoal())
+            if (m_leftTile.IsGoal() )
             {
-                m_icon.Success();
+                Debug.Log("Puzzle completed");
+                if (m_icon != null)
+                {
+                   m_icon.Success();
+                }
+                
             }
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow) && m_rightTile)
@@ -48,7 +53,11 @@ public class PlayerController : MonoBehaviour
             Move(m_rightTile.transform);
             if (m_rightTile.IsGoal())
             {
-                m_icon.Success();
+                Debug.Log("Puzzle completed");
+                if (m_icon != null)
+                {
+                    m_icon.Success();
+                }
             }
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow) && m_upTile)
@@ -56,15 +65,23 @@ public class PlayerController : MonoBehaviour
             Move(m_upTile.transform);
             if (m_upTile.IsGoal())
             {
-                m_icon.Success();
+                Debug.Log("Puzzle completed");
+                if (m_icon != null)
+                {
+                    m_icon.Success();
+                }
             }
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && m_downTile)
         {
             Move(m_downTile.transform);
-            if (m_downTile.IsGoal())
+            if (m_downTile.IsGoal() )
             {
-                m_icon.Success();
+                Debug.Log("Puzzle completed");
+                if (m_icon != null)
+                {
+                    m_icon.Success();
+                }
             }
         }
     }

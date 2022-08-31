@@ -22,7 +22,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 3a6bcc66865d62d42be611e8cabc4e4a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 3a6bcc66865d62d42be611e8cabc4e4a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -54,6 +54,26 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PW_CoverLayer0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PW_CoverLayer0Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PW_CoverLayer1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PW_CoverLayer1Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PW_WorldMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -79,12 +99,19 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _ALPHATEST: 0
+    - _AOPower: 0
+    - _AOPowerExp: 0
+    - _AOVertexMask: 0
     - _AlphaClip: 0
+    - _AlphaTest: 0
     - _Blend: 0
+    - _BumpMapScale: 1
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
+    - _CullMode: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
@@ -96,7 +123,50 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
+    - _PW_Cover: 0
+    - _PW_CoverLayer0AlphaClamp: 0
+    - _PW_CoverLayer0Edge: 0
+    - _PW_CoverLayer0FadeDist: 0
+    - _PW_CoverLayer0FadeStart: 0
+    - _PW_CoverLayer0Metallic: 0.5
+    - _PW_CoverLayer0NormalScale: 1
+    - _PW_CoverLayer0Progress: 0
+    - _PW_CoverLayer0Smoothness: 0.5
+    - _PW_CoverLayer0Tiling: 0
+    - _PW_CoverLayer0Wrap: 0
+    - _PW_CoverLayer1AlphaClamp: 0
+    - _PW_CoverLayer1Edge: 0
+    - _PW_CoverLayer1FadeDist: 0
+    - _PW_CoverLayer1FadeStart: 0
+    - _PW_CoverLayer1Metallic: 0.5
+    - _PW_CoverLayer1NormalScale: 1
+    - _PW_CoverLayer1Progress: 0
+    - _PW_CoverLayer1Smoothness: 0.5
+    - _PW_CoverLayer1Tiling: 0
+    - _PW_CoverLayer1Wrap: 0
+    - _PW_GlobalControl: 1
+    - _PW_Global_Metallic: 0
+    - _PW_Global_SeasonalTintAmount: 0
+    - _PW_Global_Smoothness: 0
+    - _PW_SF_BILLBOARD: 0
+    - _PW_SF_COVER: 0
+    - _PW_SF_FLORA_INDIRECT: 0
+    - _PW_SF_SSS: 0
+    - _PW_SF_WIND: 0
+    - _PW_SF_WORLDMAP: 0
+    - _PW_SSS: 0
+    - _PW_SSSDistortion: 0.5
+    - _PW_SSSPower: 2
+    - _PW_SSS_1: 0
+    - _PW_ShaderID: 0
+    - _PW_ShaderMode: 0
+    - _PW_TerrainSizeX: 0
+    - _PW_TerrainSizeY: 0
+    - _PW_WindToggle: 0
+    - _PW_WorldMapToggle: 0
+    - _PW_WorldMapUVScale: 0
     - _Parallax: 0.02
+    - _QueueControl: -1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0.5
@@ -106,11 +176,21 @@ Material:
     - _Surface: 0
     - _UVSec: 0
     - _WorkflowMode: 1
+    - _WrapLighting: 0
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _PW_CoverLayer0Color: {r: 1, g: 1, b: 1, a: 0}
+    - _PW_CoverLayer1Color: {r: 1, g: 1, b: 1, a: 0}
+    - _PW_SSSTint: {r: 1, g: 1, b: 1, a: 0}
+    - _PW_WindTreeFlex: {r: 0, g: 0, b: 0, a: 0}
+    - _PW_WindTreeFrequency: {r: 0, g: 0, b: 0, a: 0}
+    - _PW_WindTreeWidthHeight: {r: 0, g: 0, b: 0, a: 0}
+    - _PW_WorldMapColorCover0: {r: 1, g: 1, b: 1, a: 1}
+    - _PW_WorldMapColorCover1: {r: 1, g: 1, b: 1, a: 1}
+    - _PW_WorldMapColorObject: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &902087636378301680
