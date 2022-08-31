@@ -32,56 +32,47 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void CheckForWinState()
+    {
+        Debug.Log("Puzzle completed");
+        if (m_icon != null)
+        {
+            m_icon.Success();
+        }
+    }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && m_leftTile)
+        if ((Input.GetKeyDown(KeyCode.LeftArrow) ||Input.GetKeyDown(KeyCode.A)) && m_leftTile)
         {
             Move(m_leftTile.transform);
             if (m_leftTile.IsGoal() )
             {
-                Debug.Log("Puzzle completed");
-                if (m_icon != null)
-                {
-                   m_icon.Success();
-                }
-                
+                CheckForWinState();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && m_rightTile)
+        else if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && m_rightTile)
         {
             Move(m_rightTile.transform);
             if (m_rightTile.IsGoal())
             {
-                Debug.Log("Puzzle completed");
-                if (m_icon != null)
-                {
-                    m_icon.Success();
-                }
+                CheckForWinState();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && m_upTile)
+        else if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && m_upTile)
         {
             Move(m_upTile.transform);
             if (m_upTile.IsGoal())
             {
-                Debug.Log("Puzzle completed");
-                if (m_icon != null)
-                {
-                    m_icon.Success();
-                }
+                CheckForWinState();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && m_downTile)
+        else if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && m_downTile)
         {
             Move(m_downTile.transform);
             if (m_downTile.IsGoal() )
             {
-                Debug.Log("Puzzle completed");
-                if (m_icon != null)
-                {
-                    m_icon.Success();
-                }
+                CheckForWinState();
             }
         }
     }
