@@ -7,8 +7,7 @@ using UnityEngine.Rendering.Universal;
 [System.Serializable]
 public class PostComment
 {
-    public string name;
-    public Sprite icon;
+    public eGamerTag m_characterTag;
     public string comment;
     public string time;
     public int likes;
@@ -26,19 +25,19 @@ namespace Fungus
     
     public class Forum : Command
     {
-        // Removed this tooltip as users's reported it obscures the text box
+        [SerializeField] protected string postTitle = "";
+        
         [TextArea(5,10)]
         [SerializeField] protected string caption = "";
         
         [Tooltip("Character that is posting")]
-        [SerializeField] protected string posterName;
+        [SerializeField] protected eGamerTag m_characterTag;
 
-        [Tooltip("Portrait that represents speaking character")]
-        [SerializeField] protected Sprite portrait;
+        [SerializeField] protected eChannel m_channel;
 
         [SerializeField] protected string timePosted = "";
 
-        [SerializeField] protected string datePosted = "";
+        protected string datePosted = "";
         
         [SerializeField] protected  int[] reactions = new int[3]{0,0,0};
 
@@ -46,18 +45,13 @@ namespace Fungus
 
 
         #region Public members
-        
-
-        /// <summary>
-        /// Portrait that represents speaking character.
-        /// </summary>
-        public virtual Sprite Portrait { get { return portrait; } set { portrait = value; } }
-
-    
 
         public override void OnEnter()
         {
-            ForumManager.Instance.CreatePost(posterName, caption, portrait,  datePosted +" at " + timePosted, reactions);
+            ChannelManager.Instance.CreateChannelPost(m_characterTag, m_channel, postTitle);
+            ForumManager.Instance.CreatePostClass(postTitle, caption, m_characterTag, m_channel, timePosted, datePosted,
+                reactions, comments);
+            //ForumManager.Instance.CreatePost(m_characterTag, m_channel, caption,  datePosted +" at " + timePosted, reactions);
             Continue();
             return;
         }
