@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gamerTag: 4
   m_gamerTagText: Xx_penguin_tacoz_xX
-  m_profilePicture: {fileID: 0}
+  m_profilePicture: {fileID: 21300000, guid: 3401b90c45f49194e9130309cc7d893a, type: 3}
   m_realName: Lexi
   m_description: a random XD invader zim emo girl

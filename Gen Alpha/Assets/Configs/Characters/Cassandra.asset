@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gamerTag: 0
   m_gamerTagText: RogueHeartAlpha
-  m_profilePicture: {fileID: 21300000, guid: b3a80c29720832c4089070d1f91a9a45, type: 3}
+  m_profilePicture: {fileID: 21300000, guid: 1048d85b9fa26384eb108c1ff69745b7, type: 3}
   m_realName: Cassandra/Cass
   m_description: Player's character

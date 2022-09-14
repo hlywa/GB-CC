@@ -76,6 +76,7 @@ public class ForumPost : MonoBehaviour
                 m_LikeButton.sprite = m_hasLiked ? m_selectedLikeIcon : m_defaultLikeIcon;
                 break;
             case "Save":
+                
                 m_hasSaved = !m_hasSaved;
                 m_saves += m_hasSaved ? 1 : -1;
                 m_SaveButton.sprite = m_hasSaved ? m_selectedSaveIcon : m_defaultSaveIcon;

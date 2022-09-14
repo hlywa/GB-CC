@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gamerTag: 5
   m_gamerTagText: GlitchedDream00
-  m_profilePicture: {fileID: 0}
+  m_profilePicture: {fileID: 21300000, guid: a5171feec4d629c4c9818cde3132333b, type: 3}
   m_realName: Maddie
   m_description: Athena - game perservation enthusiast

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gamerTag: 7
   m_gamerTagText: AcheronAlien
-  m_profilePicture: {fileID: 0}
+  m_profilePicture: {fileID: 21300000, guid: 15ffa2c6794916d428473ac15f6be303, type: 3}
   m_realName: Brian
   m_description: Dad bestie 1
