@@ -1412,7 +1412,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 753, y: -118.85013}
-  m_SizeDelta: {x: 1506, y: 271.3385}
+  m_SizeDelta: {x: 1506, y: 397.58}
   m_Pivot: {x: 0.5, y: 0.9999999}
 --- !u!222 &5257006220078054898
 CanvasRenderer:
@@ -1481,7 +1481,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 64
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 32.77
@@ -2030,7 +2030,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 753, y: -319.60303}
+  m_AnchoredPosition: {x: 753, y: -312.6}
   m_SizeDelta: {x: 1506, y: 152.3681}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3643774270010269856
@@ -2086,7 +2086,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 439
     m_Right: 0
-    m_Top: -40
+    m_Top: 16
     m_Bottom: 0
   m_ChildAlignment: 5
   m_Spacing: -181.86
@@ -2133,8 +2133,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 798, y: -128.99}
-  m_SizeDelta: {x: 1505.3469, y: 0}
+  m_AnchoredPosition: {x: 752.67346, y: -106.854996}
+  m_SizeDelta: {x: 1505.3469, y: 40.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1324359192500349845
 CanvasRenderer:
@@ -2164,7 +2164,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: post text
+  m_text: test
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2191,8 +2191,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38.5
-  m_fontSizeBase: 38.5
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2227,7 +2227,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 317.05838, y: -46.60382, z: 50.112427, w: 42.698914}
+  m_margin: {x: 343.60303, y: -76.69403, z: 50.112427, w: -70.77875}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2240,7 +2240,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8525236020124250752}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
