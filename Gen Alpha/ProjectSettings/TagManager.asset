@@ -12,6 +12,8 @@ TagManager:
   - Archer
   - PW - Nature
   - Fire
+  - Pawn
+  - EnemyPawn
   layers:
   - Default
   - TransparentFX
@@ -25,10 +27,10 @@ TagManager:
   - PW_Object_Small
   - PW_Object_Medium
   - PW_Object_Large
-  - 
-  - 
-  - 
-  - 
+  - Grid
+  - Goal
+  - Pawn
+  - Tile
   - 
   - 
   - 
