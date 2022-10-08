@@ -54,7 +54,7 @@ public class ForumManager : MonoBehaviour
         if (CharacterDict.Count > 0) return;
         foreach (var character in m_characterConfigs)
         {
-            CharacterDict[character.m_gamerTag] = character;
+            CharacterDict[character.GamerTag] = character;
         }
     }
 
@@ -65,7 +65,7 @@ public class ForumManager : MonoBehaviour
 
     public void CreatePost(string postText)
     {
-        Debug.Log("Creating post");
+       
         ForumPostInfo info = ChannelPosts[postText];
         
         GameObject postObject = Instantiate(m_forumPostTemplate, m_forumPostTemplate.transform.position,
@@ -74,7 +74,7 @@ public class ForumManager : MonoBehaviour
         CharacterConfig config = CharacterDict[info.characterTag];
         ForumPost forumPost = postObject.GetComponent<ForumPost>();
         
-        forumPost.SetPost(config.m_gamerTagText, info.caption, config.m_profilePicture, info.timePosted, info.postTitle);
+        forumPost.SetPost(config.GamerTagText, info.caption, config.ProfilePicture, info.timePosted, info.postTitle);
         forumPost.SetReactStats(info.reactions[0], info.reactions[1], info.reactions[2]);
 
         foreach (var comment in info.comments)
@@ -85,7 +85,7 @@ public class ForumManager : MonoBehaviour
             forumPost = postObject.GetComponent<ForumPost>();
             config = CharacterDict[comment.m_characterTag];
             string commentTitle = "Re: " + info.postTitle;
-            forumPost.SetPost(config.m_gamerTagText, comment.comment, config.m_profilePicture, comment.time, commentTitle);
+            forumPost.SetPost(config.GamerTagText, comment.comment, config.ProfilePicture, comment.time, commentTitle);
             
         }
     }
@@ -94,6 +94,7 @@ public class ForumManager : MonoBehaviour
     {
         ForumPostInfo info = new ForumPostInfo(title, caption, gTag, channel, time, date, reaction, comments);
         ChannelPosts[title] = info;
+        ChannelManager.Instance.CreateChannelPost(gTag, channel, title);
     }
 
     public void SetUpPostFeed(string caption)

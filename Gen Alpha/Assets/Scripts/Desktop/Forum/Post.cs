@@ -48,10 +48,9 @@ namespace Fungus
 
         public override void OnEnter()
         {
-            ChannelManager.Instance.CreateChannelPost(m_characterTag, m_channel, postTitle);
             ForumManager.Instance.CreatePostClass(postTitle, caption, m_characterTag, m_channel, timePosted, datePosted,
                 reactions, comments);
-            //ForumManager.Instance.CreatePost(m_characterTag, m_channel, caption,  datePosted +" at " + timePosted, reactions);
+           
             Continue();
             return;
         }

@@ -59,7 +59,7 @@ public class ChannelManager : MonoBehaviour
     {
         m_currentChannel = ChannelDict[channel].GetChannelObject();
         m_currentChannel.SetActive(true);
-        m_homeTransform.localScale = Vector3.zero;
+        DisableHomeScreen();
     }
 
     public void CloseAllChannels()
@@ -74,7 +74,10 @@ public class ChannelManager : MonoBehaviour
     {
         m_homeTransform.localScale = Vector3.one;
     }
-
+    public void DisableHomeScreen()
+    {
+        m_homeTransform.localScale = Vector3.zero;
+    }
     public void CreateChannelPost(eGamerTag character, eChannel channel, string postTitle)
     {
         GameObject postObject = Instantiate(m_channelPostTemplate, m_channelPostTemplate.transform.position,
@@ -82,7 +85,7 @@ public class ChannelManager : MonoBehaviour
 
         CharacterConfig config = ForumManager.Instance.GetCharacterConfig(character);
         ChannelPost channelPost = postObject.GetComponent<ChannelPost>();
-        channelPost.SetChannelInfo(postTitle, config.m_gamerTagText);
+        channelPost.SetChannelInfo(postTitle, config.GamerTagText);
       
     }
 
