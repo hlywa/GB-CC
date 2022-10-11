@@ -18,6 +18,7 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] private PlayerPawn m_playerPawn;
     private Transform m_playerTransform;
 
+    [SerializeField] private AudioClip m_playerDeathSound;
     [SerializeField] private ResultScreen m_resultScreen;
     [SerializeField] private float m_screenDelay = 0.5f;
     
@@ -122,6 +123,8 @@ public class PuzzleManager : MonoBehaviour
     public void LosePuzzle()
     {
         Destroy(m_playerPawn.gameObject);
+        PuzzleAudioManager.Instance.PlaySfx(m_playerDeathSound);
+
         StartCoroutine(ShowResultScreen(false));
         Debug.Log("Puzzle Lost!");
     }

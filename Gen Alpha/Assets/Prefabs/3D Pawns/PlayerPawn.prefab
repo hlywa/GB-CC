@@ -9819,7 +9819,6 @@ GameObject:
   - component: {fileID: 1653656169}
   - component: {fileID: 1653656168}
   - component: {fileID: 1653656167}
-  - component: {fileID: 1653656166}
   - component: {fileID: 1653656163}
   m_Layer: 0
   m_Name: LandingFeedback
@@ -9860,7 +9859,6 @@ MonoBehaviour:
   - {fileID: 1653656169}
   - {fileID: 1653656168}
   - {fileID: 1653656167}
-  - {fileID: 1653656166}
   - {fileID: 1653656163}
   InitializationMode: 2
   SafeMode: 3
@@ -10087,53 +10085,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   RemapIntensityZero: 0
   RemapIntensityOne: 40
---- !u!114 &1653656166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653656161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c2ce51367856bd49b72678cc4263225, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Active: 1
-  Label: Sound
-  Chance: 100
-  Timing:
-    TimescaleMode: 0
-    ExcludeFromHoldingPauses: 0
-    ContributeToTotalDuration: 1
-    InitialDelay: 0
-    CooldownDuration: 0
-    InterruptsOnStop: 1
-    NumberOfRepeats: 0
-    RepeatForever: 0
-    DelayBetweenRepeats: 1
-    MMFeedbacksDirectionCondition: 0
-    PlayDirection: 0
-    ConstantIntensity: 0
-    UseIntensityInterval: 0
-    IntensityIntervalMin: 0
-    IntensityIntervalMax: 0
-    Sequence: {fileID: 0}
-    TrackID: 0
-    Quantized: 0
-    TargetBPM: 120
-  DebugActive: 0
-  Sfx: {fileID: 8300000, guid: 1739ff78014ab3f44a5757aede3c7ea9, type: 3}
-  RandomSfx: []
-  TestButton: 0
-  TestStopButton: 0
-  PlayMethod: 1
-  PoolSize: 10
-  MinVolume: 0.8
-  MaxVolume: 1
-  MinPitch: 0.8
-  MaxPitch: 1
-  SfxAudioMixerGroup: {fileID: 0}
 --- !u!114 &1653656163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10241,6 +10192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 0.08
+  m_hoverSound: {fileID: 8300000, guid: a9188694e2c5bbc4daaaa863f4e82556, type: 3}
 --- !u!114 &1661042253693070128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10263,6 +10215,7 @@ MonoBehaviour:
   m_normalMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_highlightedMaterial: {fileID: 2100000, guid: 5b68d811c7618c2458de9a5cbc679f76, type: 2}
   m_landingFeedback: {fileID: 1653656162}
+  m_selectSound: {fileID: 8300000, guid: fdf722bfa75a23340b09b53b6340429d, type: 3}
 --- !u!1001 &4405776625146674026
 PrefabInstance:
   m_ObjectHideFlags: 0

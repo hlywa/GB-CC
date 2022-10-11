@@ -48,13 +48,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_meshRenderer: {fileID: 0}
   m_normalMaterial: {fileID: 0}
-  m_allowedMaterial: {fileID: 0}
+  m_highlightedMaterial: {fileID: 0}
   m_tileLayerMask:
     serializedVersion: 2
     m_Bits: 32768
   m_tileType: 3
-  m_isUnoccupied: 1
   m_isWalkable: 1
+  m_occupiedBy: {fileID: 0}
   m_nearbyTiles:
   - {fileID: 0}
   - {fileID: 0}
@@ -63,6 +63,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  m_hoverAmount: 0.08
+  m_hoverSound: {fileID: 8300000, guid: 820de9d69a05c004c93d365fb3070e82, type: 3}
+  m_playerFootsteps:
+  - {fileID: 8300000, guid: 09a5db7028bc20a43bd46c316b0fec3b, type: 3}
+  - {fileID: 8300000, guid: a9009a39aa5bf9745975fb43f6a4bbde, type: 3}
+  - {fileID: 8300000, guid: 0875598dfd024f24a95c6960f5937655, type: 3}
+  m_enemyFootsteps:
+  - {fileID: 8300000, guid: c9266b34393ffa449b18eca341332dd3, type: 3}
+  - {fileID: 8300000, guid: 0294ae4b6b691594fbb4edb2ed4eace4, type: 3}
+  - {fileID: 8300000, guid: 48499693339edcd4eaa537417591d7ae, type: 3}
 --- !u!65 &2087917199120880916
 BoxCollider:
   m_ObjectHideFlags: 0

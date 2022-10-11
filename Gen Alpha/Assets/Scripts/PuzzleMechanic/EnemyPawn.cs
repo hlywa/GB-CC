@@ -1,6 +1,10 @@
 
+using System.Collections;
+using UnityEngine;
+
 public class EnemyPawn : PuzzlePawn
 {
+    [SerializeField] private AudioClip m_squishSound;
 
     protected override void OnMouseDown()
     {
@@ -8,8 +12,8 @@ public class EnemyPawn : PuzzlePawn
         if (!m_puzzleManager.IsPlayerTurn || !m_currentTile.IsHighlighted()) return;
         m_puzzleManager.KillEnemy(this);
         m_puzzleManager.MovePlayerPawn(m_currentTile);
+        PuzzleAudioManager.Instance.PlaySfx(m_squishSound);
         Destroy(this.gameObject);
-        //Add some ceremony or sfx here.
     }
     
     public override bool IsEnemy()
@@ -25,12 +29,18 @@ public class EnemyPawn : PuzzlePawn
     public void MoveToRandomTile()
     {
         PuzzleTile tile = m_currentTile.GetClosestTile();
+        print(tile.name);
+        StartCoroutine(MoveWithDelay(0.3f));
         
-        if (tile.HasPlayer())
+        IEnumerator MoveWithDelay(float seconds)
         {
-            m_puzzleManager.LosePuzzle();
+            yield return new WaitForSeconds(seconds);
+            MovePawn(tile);
+            if (tile.HasPlayer())
+            {
+                m_puzzleManager.LosePuzzle();
+            }
+            
         }
-        
-        MovePawn(tile);
     }
 }

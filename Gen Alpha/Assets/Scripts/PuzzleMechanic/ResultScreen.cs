@@ -21,6 +21,11 @@ public class ResultScreen : MonoBehaviour
     [SerializeField] private GameObject m_restartButton;
     [SerializeField] private GameObject m_nextLevelButton;
 
+    [SerializeField] private AudioClip m_winIntroSound;
+    [SerializeField] private AudioClip m_winLoopSound;
+    [SerializeField] private AudioClip m_loseIntroSound;
+    [SerializeField] private AudioClip m_loseLoopSound;
+
     private void Start()
     {
         m_screen.SetActive(false);
@@ -32,6 +37,15 @@ public class ResultScreen : MonoBehaviour
         m_backgroundColor.color = hasWon ? m_winColor : m_loseColor;
         m_nextLevelButton.SetActive(hasWon);
         m_screen.SetActive(true);
+
+        if (hasWon)
+        {
+            PuzzleAudioManager.Instance.PlayResultSound(m_winIntroSound, m_winLoopSound);
+        }
+        else
+        {
+            PuzzleAudioManager.Instance.PlayResultSound(m_loseIntroSound, m_loseLoopSound);
+        }
     }
     
 

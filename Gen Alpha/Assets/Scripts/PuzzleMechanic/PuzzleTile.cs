@@ -15,12 +15,19 @@ public class PuzzleTile : MonoBehaviour
     [SerializeField] private bool m_isWalkable;
     bool m_isHighlighted;
     
-    bool m_isOccupied;
+    [SerializeField]  bool m_isOccupied;
     [SerializeField]  PuzzlePawn m_occupiedBy;
     
     [SerializeField] PuzzleTile[] m_nearbyTiles = new PuzzleTile[7];
     private int m_nearbyTilesCount;
+    private bool m_bIsZoomedIn;
+    
+    [SerializeField] float m_hoverAmount = 0.08f;
+    [SerializeField] private AudioClip m_hoverSound;
 
+    [SerializeField] private AudioClip[] m_playerFootsteps;
+    [SerializeField] private AudioClip[] m_enemyFootsteps;
+    
     private void Start()
     {
         var position = transform.position;
@@ -35,6 +42,26 @@ public class PuzzleTile : MonoBehaviour
                 m_nearbyTiles[i] = tile;
             }
         }
+    }
+    
+   
+
+    private void OnMouseEnter()
+    {
+        if (!m_isHighlighted || m_bIsZoomedIn) return;
+        transform.localScale += new Vector3(m_hoverAmount, m_hoverAmount, m_hoverAmount);
+        m_bIsZoomedIn = true;
+        if (m_hoverSound)
+        {
+            PuzzleAudioManager.Instance.PlaySfx(m_hoverSound);
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        if (!m_bIsZoomedIn) return;
+        transform.localScale -= new Vector3(m_hoverAmount, m_hoverAmount, m_hoverAmount);
+        m_bIsZoomedIn = false;
     }
     
     private void OnMouseDown()
@@ -59,15 +86,20 @@ public class PuzzleTile : MonoBehaviour
         m_occupiedBy = pawn;
         m_isOccupied = state;
     }
-
+    
     public bool HasPlayer()
     {
-        return m_occupiedBy && m_occupiedBy.IsPlayer();
+        return m_isOccupied && m_occupiedBy.IsPlayer();
     }
     
     Vector3 GetPosition()
     {
         return transform.position;
+    }
+
+    public AudioClip GetLandingSound(bool isPlayer)
+    {
+        return isPlayer ? m_playerFootsteps[Random.Range(0, m_playerFootsteps.Length)] : m_enemyFootsteps[Random.Range(0, m_enemyFootsteps.Length)];
     }
     
     #region Tile Highlights

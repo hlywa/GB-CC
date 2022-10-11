@@ -12,7 +12,7 @@ public class PuzzlePawn : MonoBehaviour
     [SerializeField] private MeshRenderer[] m_meshRenderers;
     [SerializeField] private Material m_normalMaterial;
     [SerializeField] private Material m_highlightedMaterial;
-    
+
     [SerializeField] MMFeedbacks m_landingFeedback;
     protected PuzzleManager m_puzzleManager;
     protected PuzzleTile m_currentTile;
@@ -45,14 +45,12 @@ public class PuzzlePawn : MonoBehaviour
     public void MovePawn(PuzzleTile newTile)
     {
         if (m_isMoving) return;
-        
         m_currentTile.IsOccupied(null, false);
         m_currentTile = newTile;
-        StartCoroutine(Move(newTile.gameObject.transform.position, 0.5f));
-        m_currentTile.IsOccupied(this, true);
+        StartCoroutine(Move(newTile.gameObject.transform.position, 0.5f, newTile.GetLandingSound(m_pawnType == ePawnType.Cass)));
     }
     
-    IEnumerator Move(Vector3 endPos, float time)
+    IEnumerator Move(Vector3 endPos, float time, AudioClip landingSound)
     {
         m_isMoving = true;
         Vector3 beginPos = transform.position;
@@ -62,9 +60,14 @@ public class PuzzlePawn : MonoBehaviour
             transform.position = Parabola(beginPos, endPos, 2f, t);
             yield return null;
         }
+
+        transform.position = endPos;
         m_isMoving = false;
+        PuzzleAudioManager.Instance.PlaySfx(landingSound);
         m_landingFeedback?.PlayFeedbacks();
         m_puzzleManager.UpdateTurn();
+        m_currentTile.IsOccupied(this, true);
+
     }
     
     public Vector3 Parabola(Vector3 start, Vector3 end, float height, float t)
