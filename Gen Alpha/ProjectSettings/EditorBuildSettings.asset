@@ -11,10 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bedroom.unity
     guid: afac7b43f66cb704999eaec77c16bbb4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Cyberspace.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Credits.unity
     guid: ebeeb0ffb121caa4e90310c501f3b7b5
+  - enabled: 1
+    path: Assets/Scenes/Puzzle1.unity
+    guid: 827e2390b0e355b4bb60e7674dc63f76
+  - enabled: 1
+    path: Assets/Scenes/Puzzle3.unity
+    guid: 762cd3252b416b74982455caa4518929
   m_configObjects: {}

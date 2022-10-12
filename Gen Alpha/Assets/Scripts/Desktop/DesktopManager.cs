@@ -14,6 +14,9 @@ public enum eDesktopLayout
 public class DesktopManager : MonoBehaviour
 {
     [SerializeField] private eDesktopLayout m_currentDesktopLayout;
+
+    [SerializeField] private Animator m_gameAnimator;
+    [SerializeField] private LevelManager m_levelManager;
     
     [SerializeField] private RectTransform m_gameButton;
     [SerializeField] private RectTransform m_musicButton;
@@ -24,11 +27,12 @@ public class DesktopManager : MonoBehaviour
     [SerializeField] private TMP_Text[] m_buttonTexts;
     [SerializeField] private LayoutConfig[] m_desktopLayouts;
 
+    private bool m_openedMusic;
+    private bool m_openedForum;
+    private bool m_openedSettings;
+    
     Dictionary<eDesktopLayout, LayoutConfig> LayoutDict = new();
-    
-    
     private static DesktopManager m_instance;
-
     public static DesktopManager Instance { get { return m_instance; } }
 
 
@@ -94,5 +98,28 @@ public class DesktopManager : MonoBehaviour
         SetUpLayout(layout);
     }
 
-    
+    public void OpenedForum()
+    {
+        m_openedForum = true;
+    }
+    public void OpenedSettings()
+    {
+        m_openedSettings = true;
+    }
+    public void OpenedMusic()
+    {
+        m_openedMusic = true;
+    }
+
+    public void OpenGame()
+    {
+        if (m_openedForum && m_openedMusic && m_openedSettings)
+        {
+            m_levelManager.LoadLevel("Puzzle1");
+        }
+        else
+        {
+            m_gameAnimator.SetTrigger("OpenPlayer");
+        }
+    }
 }

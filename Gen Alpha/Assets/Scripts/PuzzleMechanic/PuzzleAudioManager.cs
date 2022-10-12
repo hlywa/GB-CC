@@ -9,6 +9,8 @@ public class PuzzleAudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource m_audioSource;
 
+    private Coroutine m_coroutine;
+
     private void Awake()
     {
         if (m_instance != null && m_instance != this)
@@ -28,7 +30,7 @@ public class PuzzleAudioManager : MonoBehaviour
     public void PlayResultSound(AudioClip intro, AudioClip loop)
     {
         print("Playing result sound");
-        StartCoroutine(PlayLoopAfterIntro());
+        m_coroutine = StartCoroutine(PlayLoopAfterIntro());
         
         IEnumerator PlayLoopAfterIntro()
         {
@@ -37,6 +39,15 @@ public class PuzzleAudioManager : MonoBehaviour
             m_audioSource.loop = true;
             m_audioSource.clip = loop;
             m_audioSource.Play();
+        }
+    }
+
+    public void StopAudioSource()
+    {
+        m_audioSource.Stop();
+        if (m_coroutine != null)
+        {
+            StopCoroutine(m_coroutine);
         }
     }
 }

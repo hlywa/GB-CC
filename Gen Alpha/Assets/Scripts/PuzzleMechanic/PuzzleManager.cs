@@ -27,6 +27,7 @@ public class PuzzleManager : MonoBehaviour
 
     [SerializeField] private Transform m_centrePoint;
     [SerializeField] private float m_rotationTime = 1f;
+
     private bool m_isRotating;
 
     public bool IsGamePaused {get; private set;}
@@ -38,7 +39,7 @@ public class PuzzleManager : MonoBehaviour
     
         if (Instance != null && Instance != this) 
         { 
-            Destroy(this); 
+           // Destroy(this); 
         } 
         else 
         { 
@@ -169,6 +170,11 @@ public class PuzzleManager : MonoBehaviour
         m_resultScreen.ShowResultScreen(hasWon);
     }
 
+    public void UnPauseGame()
+    {
+        IsGamePaused = false;
+        IsPlayerTurn = true;
+    }
 
     
     IEnumerator RotateGrid(int direction)
@@ -194,7 +200,8 @@ public class PuzzleManager : MonoBehaviour
         m_isRotating = false;
        
     }
+
+
+}
   
 
-    
-}

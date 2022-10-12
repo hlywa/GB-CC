@@ -29,7 +29,6 @@ public class EnemyPawn : PuzzlePawn
     public void MoveToRandomTile()
     {
         PuzzleTile tile = m_currentTile.GetClosestTile();
-        print(tile.name);
         StartCoroutine(MoveWithDelay(0.3f));
         
         IEnumerator MoveWithDelay(float seconds)
