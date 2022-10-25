@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7641450554261004392}
-  - component: {fileID: 7641450554261004393}
   - component: {fileID: 7641450554261004394}
+  - component: {fileID: -8186290129247919183}
   m_Layer: 15
   m_Name: WaterTile
   m_TagString: Untagged
@@ -34,7 +34,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7641450554261004393
+--- !u!65 &7641450554261004394
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7641450554261004395}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.75, y: 2.51, z: 1.97}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8186290129247919183
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,7 +56,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7641450554261004395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10d5fb622d486f241ac880fd3f0411ef, type: 3}
+  m_Script: {fileID: 11500000, guid: f2f5f9df1ec0b7249aa6901724e0775e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_meshRenderer: {fileID: 5618292626203737403}
@@ -53,7 +66,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32768
   m_tileType: 4
-  m_isWalkable: 0
+  m_isWalkable: 1
+  m_isOccupied: 0
   m_occupiedBy: {fileID: 0}
   m_nearbyTiles:
   - {fileID: 0}
@@ -73,19 +87,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c9266b34393ffa449b18eca341332dd3, type: 3}
   - {fileID: 8300000, guid: 0294ae4b6b691594fbb4edb2ed4eace4, type: 3}
   - {fileID: 8300000, guid: 48499693339edcd4eaa537417591d7ae, type: 3}
---- !u!65 &7641450554261004394
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7641450554261004395}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.75, y: 2.51, z: 1.97}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3448011435150611841
 PrefabInstance:
   m_ObjectHideFlags: 0

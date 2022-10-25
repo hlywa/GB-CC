@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Cyberspace.unity
+- path: Assets/_GenAlpha/Scenes/Puzzle3.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
