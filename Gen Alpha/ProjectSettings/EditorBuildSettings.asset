@@ -6,21 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/_GenAlpha/Scenes/Main Menu.unity
     guid: f6bf569d2291a8f4eb9eefe784756ae6
   - enabled: 1
-    path: Assets/Scenes/Bedroom.unity
+    path: Assets/_GenAlpha/Scenes/Bedroom.unity
     guid: afac7b43f66cb704999eaec77c16bbb4
   - enabled: 0
-    path: Assets/Scenes/Cyberspace.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Scenes/Credits.unity
+    path: Assets/_GenAlpha/Scenes/Credits.unity
     guid: ebeeb0ffb121caa4e90310c501f3b7b5
   - enabled: 1
-    path: Assets/Scenes/Puzzle1.unity
+    path: Assets/_GenAlpha/Scenes/GrassPuzzle1.unity
     guid: 827e2390b0e355b4bb60e7674dc63f76
   - enabled: 1
-    path: Assets/Scenes/Puzzle3.unity
+    path: Assets/_GenAlpha/Scenes/GrassPuzzle3.unity
     guid: 762cd3252b416b74982455caa4518929
+  - enabled: 1
+    path: Assets/_GenAlpha/Scenes/GrassPuzzle2.unity
+    guid: 5dc6e2d6a0aaea741b5a410b8d67490e
+  - enabled: 1
+    path: Assets/_GenAlpha/Scenes/FirePuzzle1.unity
+    guid: adde1c1d0ac805946834706af8b06e53
   m_configObjects: {}

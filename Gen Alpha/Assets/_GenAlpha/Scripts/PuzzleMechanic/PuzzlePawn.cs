@@ -10,6 +10,8 @@ public class PuzzlePawn : MonoBehaviour
     [SerializeField] private LayerMask m_tileLayerMask;
 
     [SerializeField] private MeshRenderer[] m_meshRenderers;
+    [SerializeField] private SkinnedMeshRenderer[] m_skinnedMeshRenderers;
+
     [SerializeField] private Material m_normalMaterial;
     [SerializeField] private Material m_highlightedMaterial;
 
@@ -94,11 +96,19 @@ public class PuzzlePawn : MonoBehaviour
         {
             meshRenderer.material = m_highlightedMaterial;
         }
+        foreach (var meshRenderer in m_skinnedMeshRenderers)
+        {
+            meshRenderer.material = m_highlightedMaterial;
+        }
     }
 
     public void ResetVisuals()
     {
         foreach (var meshRenderer in m_meshRenderers)
+        {
+            meshRenderer.material = m_normalMaterial;
+        }
+        foreach (var meshRenderer in m_skinnedMeshRenderers)
         {
             meshRenderer.material = m_normalMaterial;
         }
