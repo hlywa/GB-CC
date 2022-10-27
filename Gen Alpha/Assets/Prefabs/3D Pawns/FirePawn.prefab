@@ -71,6 +71,7 @@ MonoBehaviour:
   m_highlightedMaterial: {fileID: 2100000, guid: 5b68d811c7618c2458de9a5cbc679f76, type: 2}
   m_landingFeedback: {fileID: 0}
   m_squishSound: {fileID: 8300000, guid: d329263a308c22a4bb762ef519a6818c, type: 3}
+  m_squishTime: 0.5
 --- !u!1001 &320542358044755326
 PrefabInstance:
   m_ObjectHideFlags: 0

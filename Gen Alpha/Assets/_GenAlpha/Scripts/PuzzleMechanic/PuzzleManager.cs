@@ -21,7 +21,7 @@ public class PuzzleManager : MonoBehaviour
 
     [SerializeField] private AudioClip m_playerDeathSound;
     [SerializeField] private ResultScreen m_resultScreen;
-    [SerializeField] private float m_screenDelay = 0.5f;
+    [SerializeField] private float m_screenDelay = 1f;
     
     private PuzzleTile m_currentTile;
     private List<EnemyPawn> m_enemies = new();
@@ -146,12 +146,27 @@ public class PuzzleManager : MonoBehaviour
 
     public void LosePuzzle()
     {
-        Destroy(m_playerPawn.gameObject);
+        StartCoroutine(SquishPlayer());
+    }
+    
+    IEnumerator SquishPlayer()
+    {
+        yield return new WaitForSeconds(0.4f);
+        float time = 0;
+        Vector3 endScale = m_playerPawn.transform.localScale;
+        while (time <=  0.5f)
+        {
+            time = time + Time.deltaTime;
+            endScale.y = Mathf.Lerp(1, 0, time / 0.5f);
+            m_playerPawn.transform.localScale = endScale;
+            yield return null;
+        }
         PuzzleAudioManager.Instance.PlaySfx(m_playerDeathSound);
-
+        Destroy(m_playerPawn.gameObject);
         StartCoroutine(ShowResultScreen(false));
         DialogueEventManager.Instance.SayDialogue(eDialogueEvent.PuzzleLost);
     }
+
 
     void SwitchCameras()
     {

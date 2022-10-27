@@ -18,6 +18,7 @@ public enum eDialogueEvent
     FirstTimeLava,
     ForumDM
 }
+
 public class DialogueEventManager : MonoBehaviour
 {
     public static DialogueEventManager Instance { get; private set; }
