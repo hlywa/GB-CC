@@ -72,6 +72,7 @@ public class PuzzlePawn : MonoBehaviour
                     m_puzzleManager.TeleportPlayerPawn();
                     break;
                 case eTileType.Fire:
+                    m_puzzleManager.LosePuzzle();
                     break;
                 default:
                     PuzzleAudioManager.Instance.PlaySfx(landingSound);

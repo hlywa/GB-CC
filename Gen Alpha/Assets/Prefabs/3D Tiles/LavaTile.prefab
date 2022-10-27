@@ -52,10 +52,9 @@ MonoBehaviour:
   m_tileLayerMask:
     serializedVersion: 2
     m_Bits: 32768
-  m_tileType: 1
+  m_tileType: 3
   m_isWalkable: 1
   m_isOccupied: 0
-  m_occupiedBy: {fileID: 0}
   m_nearbyTiles:
   - {fileID: 0}
   - {fileID: 0}

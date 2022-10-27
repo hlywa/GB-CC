@@ -102,7 +102,21 @@ public class PuzzleTile : MonoBehaviour
 
     public AudioClip GetLandingSound(bool isPlayer)
     {
-        return isPlayer ? m_playerFootsteps[Random.Range(0, m_playerFootsteps.Length)] : m_enemyFootsteps[Random.Range(0, m_enemyFootsteps.Length)];
+        if (isPlayer)
+        {
+            if (m_playerFootsteps.Length != 0)
+            {
+                return m_playerFootsteps[Random.Range(0, m_playerFootsteps.Length)];
+            }
+        }
+        else
+        {
+            if (m_enemyFootsteps.Length != 0)
+            {
+                return m_enemyFootsteps[Random.Range(0, m_enemyFootsteps.Length)];
+            }
+        }
+        return null;
     }
     
     #region Tile Highlights
@@ -166,6 +180,25 @@ public class PuzzleTile : MonoBehaviour
          var nearest = m_nearbyTiles.Where(tile => tile != null && tile.AllowEnemy() && !tile.Equals(this) && (tile.m_occupiedBy == null || tile.m_occupiedBy.IsPlayer()))
              .OrderBy(t => Vector3.Distance(playerPos, t.GetPosition())).FirstOrDefault();
          return nearest;
+     }
+
+     public PuzzleTile GetRandomNonLavaNeighbor()
+     {
+         return m_nearbyTiles.FirstOrDefault(tile => (tile.m_tileType != eTileType.Fire && tile.m_tileType != eTileType.Water));
+     }
+
+     public void ChangeToLava(GameObject lavaPrefab)
+     {
+         m_tileType = eTileType.Fire;
+         Transform childTransform = transform.GetChild(0);
+         Instantiate(lavaPrefab, childTransform.position, childTransform.rotation, transform);
+         Destroy(transform.GetChild(0).gameObject);
+
+         if (m_occupiedBy.IsPlayer())
+         {
+             PuzzleManager.Instance.LosePuzzle();
+         }
+
      }
 
 }

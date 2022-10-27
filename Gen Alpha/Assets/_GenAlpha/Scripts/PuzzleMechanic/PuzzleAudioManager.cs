@@ -24,14 +24,13 @@ public class PuzzleAudioManager : MonoBehaviour
 
     public void PlaySfx(AudioClip clip)
     {
+        if (clip == null) return;
         m_audioSource.PlayOneShot(clip);
     }
 
     public void PlayResultSound(AudioClip intro, AudioClip loop)
     {
-        print("Playing result sound");
         m_coroutine = StartCoroutine(PlayLoopAfterIntro());
-        
         IEnumerator PlayLoopAfterIntro()
         {
             m_audioSource.PlayOneShot(intro);

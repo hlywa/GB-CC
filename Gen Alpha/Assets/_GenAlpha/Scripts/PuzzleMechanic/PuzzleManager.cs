@@ -28,8 +28,10 @@ public class PuzzleManager : MonoBehaviour
 
     [SerializeField] private Transform m_centrePoint;
     [SerializeField] private float m_rotationTime = 1f;
-
+    [SerializeField] private GameObject m_lavaPrefab;
+    
     private WaterTile[] m_waterTiles;
+    private PuzzleTile[] m_lavaTiles;
 
     private bool m_isRotating;
 
@@ -57,6 +59,7 @@ public class PuzzleManager : MonoBehaviour
         m_playerTransform = m_playerPawn.transform;
         m_enemies =  FindObjectsOfType<EnemyPawn>().ToList();
         m_waterTiles =  FindObjectsOfType<WaterTile>();
+        m_lavaTiles = FindObjectsOfType<PuzzleTile>().Where(tile => tile.GetTileType() == eTileType.Fire).ToArray();
     }
 
     private void Update()
@@ -169,9 +172,18 @@ public class PuzzleManager : MonoBehaviour
         if (!IsPlayerTurn)
         {
             MoveRandomEnemy();
+            SpreadLava();
         }
     }
- 
+
+    void SpreadLava()
+    {
+        if (m_lavaTiles.Length == 0) return;
+        PuzzleTile tile = m_lavaTiles[Random.Range(0, m_lavaTiles.Length)].GetRandomNonLavaNeighbor();
+        tile.ChangeToLava(m_lavaPrefab);
+
+    }
+    
     IEnumerator ShowResultScreen(bool hasWon)
     {
         IsGamePaused = true;
