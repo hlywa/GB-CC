@@ -194,10 +194,21 @@ public class PuzzleTile : MonoBehaviour
          Instantiate(lavaPrefab, childTransform.position, childTransform.rotation, transform);
          Destroy(transform.GetChild(0).gameObject);
 
-         if (m_occupiedBy.IsPlayer())
+         if (m_occupiedBy != null)
          {
-             PuzzleManager.Instance.LosePuzzle();
+             if (m_occupiedBy.IsPlayer())
+             {
+                 PuzzleManager.Instance.LosePuzzle();
+             }
+             else
+             {
+                 PuzzleManager.Instance.KillEnemy(m_occupiedBy.GetComponent<EnemyPawn>());
+             }
          }
+         
+
+         
+         
 
      }
 

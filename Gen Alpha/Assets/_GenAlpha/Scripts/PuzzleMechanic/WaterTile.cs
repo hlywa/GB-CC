@@ -9,5 +9,6 @@ public class WaterTile : PuzzleTile
         if (PuzzleManager.Instance.IsGamePaused) return;
         if (!m_isHighlighted || m_isOccupied) return;
         PuzzleManager.Instance.MovePlayerPawn(this);
+        DialogueEventManager.Instance.SayDialogue(eDialogueEvent.JumpInWater);
     }
 }

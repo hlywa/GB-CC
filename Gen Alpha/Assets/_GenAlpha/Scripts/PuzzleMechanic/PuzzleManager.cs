@@ -34,6 +34,8 @@ public class PuzzleManager : MonoBehaviour
     private PuzzleTile[] m_lavaTiles;
 
     private bool m_isRotating;
+    private bool m_firstTimeLava = true;
+    private int m_turnNumber;
 
     public bool IsGamePaused {get; private set;}
     public bool IsPlayerTurn {get; private set;}
@@ -60,6 +62,9 @@ public class PuzzleManager : MonoBehaviour
         m_enemies =  FindObjectsOfType<EnemyPawn>().ToList();
         m_waterTiles =  FindObjectsOfType<WaterTile>();
         m_lavaTiles = FindObjectsOfType<PuzzleTile>().Where(tile => tile.GetTileType() == eTileType.Fire).ToArray();
+        
+        DialogueEventManager.Instance.SayDialogue(eDialogueEvent.EnterBoard);
+
     }
 
     private void Update()
@@ -121,16 +126,22 @@ public class PuzzleManager : MonoBehaviour
     public void KillEnemy(EnemyPawn enemyPawn)
     {
         m_enemies.Remove(enemyPawn);
+
         if (m_enemies.Count <= 0)
         {
             WinPuzzle();
+        }
+        else
+        {
+            DialogueEventManager.Instance.SayDialogue(eDialogueEvent.DefeatEnemy);
+
         }
     }
 
     private void WinPuzzle()
     {
         StartCoroutine(ShowResultScreen(true));
-        Debug.Log("Puzzle Completed!");
+        DialogueEventManager.Instance.SayDialogue(eDialogueEvent.PuzzleComplete);
     }
 
     public void LosePuzzle()
@@ -139,7 +150,7 @@ public class PuzzleManager : MonoBehaviour
         PuzzleAudioManager.Instance.PlaySfx(m_playerDeathSound);
 
         StartCoroutine(ShowResultScreen(false));
-        Debug.Log("Puzzle Lost!");
+        DialogueEventManager.Instance.SayDialogue(eDialogueEvent.PuzzleLost);
     }
 
     void SwitchCameras()
@@ -171,13 +182,31 @@ public class PuzzleManager : MonoBehaviour
         IsPlayerTurn = !IsPlayerTurn;
         if (!IsPlayerTurn)
         {
+            m_turnNumber++;
             MoveRandomEnemy();
             SpreadLava();
+
+            switch (m_turnNumber)
+            {
+                case 5:
+                    DialogueEventManager.Instance.SayDialogue(eDialogueEvent.FifthTurn);
+                    return;
+                case 10:
+                    DialogueEventManager.Instance.SayDialogue(eDialogueEvent.TenthTurn);
+                    return;
+                
+            }
         }
     }
 
     void SpreadLava()
     {
+        if (m_firstTimeLava)
+        {
+            m_firstTimeLava = false;
+            DialogueEventManager.Instance.SayDialogue(eDialogueEvent.FirstTimeLava);
+        }
+        
         if (m_lavaTiles.Length == 0) return;
         PuzzleTile tile = m_lavaTiles[Random.Range(0, m_lavaTiles.Length)].GetRandomNonLavaNeighbor();
         tile.ChangeToLava(m_lavaPrefab);

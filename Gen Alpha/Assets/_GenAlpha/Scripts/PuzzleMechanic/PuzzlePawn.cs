@@ -101,6 +101,11 @@ public class PuzzlePawn : MonoBehaviour
         {
             meshRenderer.material = m_highlightedMaterial;
         }
+
+        if (m_pawnType != ePawnType.Cass)
+        {
+            DialogueEventManager.Instance.SayDialogue(eDialogueEvent.EnemyInCheck);
+        }
     }
 
     public void ResetVisuals()

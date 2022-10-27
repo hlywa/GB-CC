@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_GenAlpha/Scenes/FirePuzzle1.unity
     guid: adde1c1d0ac805946834706af8b06e53
+  - enabled: 1
+    path: Assets/_GenAlpha/Scenes/FirePuzzle2.unity
+    guid: 732df7fe1a33059448fd76c9f6cce897
   m_configObjects: {}

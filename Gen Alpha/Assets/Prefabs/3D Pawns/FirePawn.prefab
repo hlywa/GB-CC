@@ -67,7 +67,7 @@ MonoBehaviour:
   m_meshRenderers: []
   m_skinnedMeshRenderers:
   - {fileID: 8116245314888089824}
-  m_normalMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_normalMaterial: {fileID: 2100000, guid: 3903fd883659fbc4a8580ec3dc166ead, type: 2}
   m_highlightedMaterial: {fileID: 2100000, guid: 5b68d811c7618c2458de9a5cbc679f76, type: 2}
   m_landingFeedback: {fileID: 0}
   m_squishSound: {fileID: 8300000, guid: d329263a308c22a4bb762ef519a6818c, type: 3}
@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: piggywpose
       objectReference: {fileID: 0}
+    - target: {fileID: 8417361359673230750, guid: ed414a29d9cc641429560bf32dea834c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3903fd883659fbc4a8580ec3dc166ead, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed414a29d9cc641429560bf32dea834c, type: 3}
 --- !u!4 &286104946959721109 stripped
