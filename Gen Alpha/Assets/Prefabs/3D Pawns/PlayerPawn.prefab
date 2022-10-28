@@ -10212,10 +10212,14 @@ MonoBehaviour:
   m_meshRenderers:
   - {fileID: 6240881492731894139}
   - {fileID: 5454243024615038119}
+  m_skinnedMeshRenderers: []
   m_normalMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_highlightedMaterial: {fileID: 2100000, guid: 5b68d811c7618c2458de9a5cbc679f76, type: 2}
   m_landingFeedback: {fileID: 1653656162}
+  m_lavaSfx: {fileID: 8300000, guid: d16603c03d8250b4d81a158586700feb, type: 3}
+  m_waterSfx: {fileID: 8300000, guid: 7b60872c5ef5c3d44be471420002e656, type: 3}
   m_selectSound: {fileID: 8300000, guid: fdf722bfa75a23340b09b53b6340429d, type: 3}
+  m_drownTime: 2
 --- !u!1001 &4405776625146674026
 PrefabInstance:
   m_ObjectHideFlags: 0

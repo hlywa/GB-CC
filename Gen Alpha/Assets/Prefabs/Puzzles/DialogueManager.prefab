@@ -334,6 +334,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6904785404991263941, guid: df9985074b34c2e43b58913de2bfc516, type: 3}
+      propertyPath: volume
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df9985074b34c2e43b58913de2bfc516, type: 3}
 --- !u!114 &1558122409836839527 stripped
@@ -446,6 +450,10 @@ PrefabInstance:
     - target: {fileID: 1605405080312900900, guid: 7f51f15df8351f8419ddebfb757d695b, type: 3}
       propertyPath: m_Text
       value: SIR KWEET
+      objectReference: {fileID: 0}
+    - target: {fileID: 2281780332478583108, guid: 7f51f15df8351f8419ddebfb757d695b, type: 3}
+      propertyPath: volume
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3094555184357135764, guid: 7f51f15df8351f8419ddebfb757d695b, type: 3}
       propertyPath: m_SortingOrder

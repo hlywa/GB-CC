@@ -19,6 +19,9 @@ public class PuzzlePawn : MonoBehaviour
     protected PuzzleManager m_puzzleManager;
     protected PuzzleTile m_currentTile;
 
+    [SerializeField] private AudioClip m_lavaSfx;
+    [SerializeField] private AudioClip m_waterSfx;
+
     protected bool m_isMoving;
     private void Start()
     {
@@ -69,9 +72,17 @@ public class PuzzlePawn : MonoBehaviour
             switch (m_currentTile.GetTileType())
             {
                 case eTileType.Water:
+                    if (m_waterSfx)
+                    {
+                        StartCoroutine(PlayWaterSfx());
+                    }
                     m_puzzleManager.TeleportPlayerPawn();
                     break;
                 case eTileType.Fire:
+                    if (m_lavaSfx)
+                    {
+                        PuzzleAudioManager.Instance.PlaySfx(m_lavaSfx);
+                    }
                     m_puzzleManager.LosePuzzle();
                     break;
                 default:
@@ -83,6 +94,14 @@ public class PuzzlePawn : MonoBehaviour
         }
     }
     
+ 
+    IEnumerator PlayWaterSfx()
+    {
+        PuzzleAudioManager.Instance.PlaySfx(m_waterSfx);
+        yield return new WaitForSeconds(m_waterSfx.length);
+        PuzzleAudioManager.Instance.PlaySfx(m_waterSfx);
+
+    }
     
     public Vector3 Parabola(Vector3 start, Vector3 end, float height, float t)
     {

@@ -115,7 +115,7 @@ public class DesktopManager : MonoBehaviour
     {
         if (m_openedForum && m_openedMusic && m_openedSettings)
         {
-            m_levelManager.LoadLevel("Puzzle1");
+            m_levelManager.LoadLevel("GrassPuzzle1");
         }
         else
         {

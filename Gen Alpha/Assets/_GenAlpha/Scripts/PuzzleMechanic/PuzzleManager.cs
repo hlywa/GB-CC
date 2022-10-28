@@ -58,6 +58,10 @@ public class PuzzleManager : MonoBehaviour
 
     private void Start()
     {
+        if (m_playerPawn == null)
+        {
+            m_playerPawn = FindObjectOfType<PlayerPawn>();
+        }
         m_playerTransform = m_playerPawn.transform;
         m_enemies =  FindObjectsOfType<EnemyPawn>().ToList();
         m_waterTiles =  FindObjectsOfType<WaterTile>();
